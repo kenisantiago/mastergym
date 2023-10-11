@@ -1,0 +1,26 @@
+
+<div class="container">
+
+    <table class="table">
+        <thead class="table-warning">
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha de Inicio</th>
+            <th scope="col">Fecha de finalización</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inscribe of inscripciones">
+            <th scope="row">{{inscribe.clienteObtenido.cliente}}</th>
+            <td>{{inscribe.fecha | date}}</td>
+            <td>{{inscribe.fechaFinal | date}}</td>
+            <td>
+                <img width="200px" [src]="inscribe.clienteObtenido.imgUrl">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</div>

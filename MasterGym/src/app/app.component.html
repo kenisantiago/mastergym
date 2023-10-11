@@ -1,0 +1,21 @@
+
+<div *ngIf="auth.user | async as user; else showLogin">
+ <!-- 
+  <div>
+    <li class="nav-item">
+        <h3>Hola {{ user.email }}!</h3>
+    </li>
+  </div>  
+-->
+  <!--<button class="btn btn-danger" type="submit" [disabled]="false" (click)="logout()">Salir</button>-->
+  <app-agregar></app-agregar>
+</div>
+
+
+<ng-template #showLogin>
+  <app-login></app-login>
+<ng-template>
+
+ <router-outlet></router-outlet>
+ 
+
