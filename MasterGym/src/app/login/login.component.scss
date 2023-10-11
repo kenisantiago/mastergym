@@ -1,0 +1,9 @@
+.alinear{
+    align-content: center;
+}
+
+button.centrado {
+    width: 110px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+    margin-left: 20%;
+    transform: translateX(-50%);
+  }

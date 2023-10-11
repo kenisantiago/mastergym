@@ -1,0 +1,28 @@
+<div class="form-group">
+  <div *ngIf="esCargando" class="lds-facebook"><div></div><div></div><div></div></div>
+  <div class="text-center">
+    <img src="assets/gym.png" alt="">
+    <h3><b>Bienevenido <br/> Inicie sesion</b></h3>
+
+    <label for="">Usuario:   
+    <input  type="text" [(ngModel)]="usuariox" class="form-control">
+    </label>
+    <br/>
+    <label for="">Contraseña: 
+    <input type="password" [(ngModel)]="pass" (keydown.enter)="ingresar()" class="form-control">
+    </label>
+    <br/>
+    <br>
+    <button class="btn btn-success" type="submit" (click)= "ingresar()">Entrar</button>    
+    <br/>
+    <br/>
+  <label>
+    <div *ngIf="!validador" class="alert alert-danger" role="alert">
+      ¡Credencial NO invalida!
+    </div>
+  </label>
+  </div>  
+  <!--<p>{{pass}}</p>  
+  <p>{{validador}}</p>
+  -->
+</div>

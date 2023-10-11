@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" dropdown>
+  <a class="navbar-brand colorA" href="#">Proyecto GYM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Incripcion</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/imprime" routerLinkActive="active">Ver inscripciones</a>
+        </li>
+        <!--Clientes Dropdown-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+          Clientes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/agregarclientes" routerLinkActive="active">Agregar clientes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/listadoclientes" routerLinkActive="active">Ver clientes</a>
+          </div>
+        </li>
+        <!--************************-->
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/precios" routerLinkActive="active">Precios</a>
+        </li>
+        <!--Dropdown-->
+         <!-- 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+          Precios
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/agrega" routerLinkActive="active">Agregar plan</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/listadoc" routerLinkActive="active">Ver precios</a>
+          </div>
+         </li>
+        -->
+        <!--************************-->
+        <!--Reports Dropdown-->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+          Reportes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Suscripciones Diarias</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Suscripciones Mensuales</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Más vendidas</a>
+        </div>
+      </li>
+<!--************************-->
+      </ul>
+      <ul class="navbar-nav">
+        <li> 
+          <div *ngIf="auth.user | async as user; else showLogin">
+            <h6 class="color" >Administrador  </h6>
+            <h6 class="colorA">{{ user.email }}  </h6>
+          </div>  
+        </li>
+        <li>
+          <div>
+            <button class="btn btn-danger" type="submit" [disabled]="false" (click)="logout()">Salir</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>
+
+<ng-template #showLogin>
+  <app-login></app-login>
+<ng-template>
+  

@@ -1,0 +1,49 @@
+    <div class="container mt-5">
+      <h4>Listado de clientes</h4>
+      <form action="">
+        <div class="form-group">
+          <label>
+            <input class="form-control" type="text" placeholder="Buscador de clientes">
+          </label>   
+        </div>
+        <div class="dropdown-divider"></div>
+        <br><br>
+      </form>
+
+    <!--Loop Tester-->
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let usuario of clientes">
+        <div class="card" >             
+          <img class="card-img-top perfil" src="{{usuario.imgUrl}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{usuario.cliente}}</h5>
+              <h6 class="card-title">tel: {{usuario.telefono}}</h6>
+              <h6 class="card-title">IdUser: {{usuario.id}}</h6>
+              <h6 class="card-title">RefUser: {{usuario.ref}}</h6>
+              <a [routerLink]="['/agregarclientes/', usuario.id]" class="card-link">Editar</a>
+              <a href="#" class="card-link text-danger"> Desactivar</a>
+            </div>
+        </div> 
+      </div>
+    </div>
+</div>
+<!--
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
+-->
