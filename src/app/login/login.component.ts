@@ -9,10 +9,10 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class LoginComponent implements OnInit {
   usuariox: string ='roy500@gmail.com';
-  pass: string = '12345';
+  pass: string = '123456';
   validador: boolean = true;
   esCargando: boolean = false;
-  msg:string ="";   
+  msg:string ="";
   foormularioLogin: FormGroup = new FormGroup({});
 
   constructor(private creadorFormulario: FormBuilder, public auth: AngularFireAuth) { }
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.login(this.usuariox, this.pass);
       if(this.foormularioLogin.valid){
         this.auth.signInWithEmailAndPassword(this.foormularioLogin.value.email, this.foormularioLogin.value.password).catch((error)=>{console.log(error)});
-        this.validador = true;  
+        this.validador = true;
       }else{
         this.validador = false;
         this.esCargando = true;
@@ -45,5 +45,5 @@ export class LoginComponent implements OnInit {
     login(usuariox:string, pass:string) {
       this.auth.signInWithEmailAndPassword(this.usuariox, this.pass);
     }
-  
+
 }

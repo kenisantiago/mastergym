@@ -1,0 +1,49 @@
+<div class="form-group" style="background: linear-gradient(
+  180deg, rgb(153, 52, 224) 14%,
+  rgba(243, 6, 6, 0.521) 97%);">
+  <div class="text-center" style="background: linear-gradient(
+    180deg, rgb(108, 18, 172) 14%,
+    rgba(243, 6, 6, 0.521) 97%);">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="card w-100" style="max-width: 400px;" >
+        <div class="card-body text-center" style="background: linear-gradient(
+          180deg, rgb(139, 112, 158) 14%,
+          rgba(223, 216, 216, 0.521) 97%);">
+          <h1><b>Bienvenido</b></h1>
+          <img src="assets/gym.png" alt="img" class="img-fluid my-3" style="max-width: 250px; height: auto;">
+
+          <h3><b>Inicio de sesión</b></h3>
+
+          <div class="input-group mb-3 text-start">
+            <!-- <label for="usuario">Usuario:</label> -->
+            <span class="input-group-text" id="basic-addon1">&nbsp;usuario@ &nbsp;</span>
+            <input type="text" id="usuario" [(ngModel)]="usuariox" class="form-control">
+          </div>
+          <div class="input-group mb-3 text-start">
+            <!-- <label for="pass">Contraseña:</label> -->
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
+            <input type="password" id="pass" [(ngModel)]="pass" (keydown.enter)="ingresar()" class="form-control">
+          </div>
+          <br>
+          <br>
+          <div class="row g-1">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+              <button class="btn btn-success w-100" type="submit" (click)="ingresar()">Entrar</button>
+            </div>
+          </div>
+          <div *ngIf="!validador" class="alert alert-danger mt-3" role="alert">
+            ¡Credencial NO válida!
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="esCargando" class="lds-facebook">
+    <p>hi</p>
+  </div>
+  <!--<p>{{pass}}</p>
+  <p>{{validador}}</p>
+  -->
+</div>
